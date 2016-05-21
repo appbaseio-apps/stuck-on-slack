@@ -33,6 +33,7 @@ module.exports = function(req, res) {
         id: body.team_id,
         body: body
       }).on('data', function(response) {
+        subscribeToTeamUpdates(body.team_id, body.incoming_webhook.url)
         console.log(response);
       }).on('error', function(error) {
         console.log(error);
@@ -42,3 +43,33 @@ module.exports = function(req, res) {
     }
   });
 };
+
+function subscribeToTeamUpdates(team_id, webhookUrl) {
+  /* Query to check if the new status is posted with specific team_id */
+  var requestObject = {
+    type: "statuses",
+    body: {
+      query: {
+        match: {
+          "team_id": team_id
+        }
+      }
+    }
+  };
+
+  var statusBodyObject = {
+    "text": "@{{{user_name}}} is working on {{{status}}}"
+  }
+
+  var webhookObject = {
+    'method': 'POST',
+    'url': webhookUrl,
+    'body': statusBodyObject
+  }
+
+  appbaseRef.searchStreamToURL(requestObject, webhookObject).on('data', function(stream) {
+    console.log("Webhook initialized: ", JSON.stringify(stream))
+  }).on('error', function(error) {
+    console.log("Query error: ", JSON.stringify(error))
+  });
+}
