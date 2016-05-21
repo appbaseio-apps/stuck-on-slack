@@ -1,4 +1,13 @@
 {
-  "SLACK_CLIENT_ID": "your_slack_client_id",
-  "SLACK_CLIENT_SECRET": "your_slack_client_secret"
+  "slack": {
+    "SLACK_CLIENT_ID": "your_slack_client_id",
+    "SLACK_CLIENT_SECRET": "your_slack_client_secret"
+  },
+  "appbase": {
+    "appname": "your_appbase_appname",
+    "username": "your_app_username",
+    "password": "your_app_passowrd",
+    "userType": "users",
+    "statusType": "statuses"
+  }
 }
