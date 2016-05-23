@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 // var router = express.Router(); // get an instance of the express Router
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-app.get('/status', require('./api/status'));
+app.post('/status', require('./api/status'));
 app.get('/auth', require('./api/auth'));
 app.get('/', require('./api/login'));
 

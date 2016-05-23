@@ -3,11 +3,11 @@ var appbaseRef = require('../helper/appbase').appbaseRef;
 module.exports = function(req, res) {
   res.json({ text: 'Your status has been updated! Keep working!' });
   var jsonObject = {
-    "team_id": req.query.team_id,
-    "team_domain": req.query.team_domain,
-    "status": req.query.text,
-    "user_name": req.query.user_name,
-    "channel_name": req.query.channel_name
+    "team_id": req.body.team_id,
+    "team_domain": req.body.team_domain,
+    "status": req.body.text,
+    "user_name": req.body.user_name,
+    "channel_name": req.body.channel_name
   }
   console.log(jsonObject)
   appbaseRef.index({
