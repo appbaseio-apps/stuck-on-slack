@@ -20,9 +20,6 @@ app.use(express.static(__dirname + '/public'));
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 app.post('/status', require('./api/status'));
 app.get('/auth', require('./api/auth'));
-// app.get('/', require('./api/login'));
-
-
 
 // more routes for our API will happen here
 
