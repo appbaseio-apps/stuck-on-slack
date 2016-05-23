@@ -10,6 +10,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+app.use(express.static(__dirname + '/public'));
+
+
 // ROUTES FOR OUR API
 // =============================================================================
 // var router = express.Router(); // get an instance of the express Router
@@ -17,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 app.post('/status', require('./api/status'));
 app.get('/auth', require('./api/auth'));
-app.get('/', require('./api/login'));
+// app.get('/', require('./api/login'));
 
 
 
