@@ -6,6 +6,9 @@
 // call the packages we need
 var express = require('express'); // call express
 var app = express(); // define our app using express
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // ROUTES FOR OUR API
 // =============================================================================
