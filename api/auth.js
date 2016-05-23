@@ -38,7 +38,7 @@ module.exports = function(req, res) {
       }).on('error', function(error) {
         console.log(error);
       });
-      res.send("You've connected successfully! Now try using /on command from your slack.")
+      res.redirect("/dashboard.html")
 
     }
   });
