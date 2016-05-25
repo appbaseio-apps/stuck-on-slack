@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#2196F3">
-  <title>A tongue-in-cheek named realtime status reporting app using appbase.io.</title>
+  <title>Realtime status reporting integration for slack</title>
   <!-- CSS  -->
   <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
   <link href="min/custom-min.css" type="text/css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <nav id="nav_f" class="default_color" role="navigation">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#" id="logo-container" class="brand-logo">Chewbacca</a>
+          <a href="#" id="logo-container" class="brand-logo">slashon</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#intro">How it works?</a></li>
             <li><a href="#work">Features</a></li>
@@ -45,7 +45,7 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <h2 class="text_h center header cd-headline letters type">
-            <span>A tongue-in-cheek named realtime status reporting app using appbase.io.</span>
+            <span>Realtime status reporting integration for slack</span>
         </h2>
       <div class="row center">
         <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands&client_id=2920034424.44477141123&redirect_uri=http://127.0.0.1:5001/auth"><img alt="Add to Slack" height="60" width="208" src="https://platform.slack-edge.com/img/add_to_slack@2x.png" srcset="https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
@@ -57,8 +57,6 @@
     <div class="container">
       <h2 class="header text_b center">Live demo GIF</h2>
       <h5 class="center grey-text"> </h5>
-      <div class="row" id="available-slots">
-      </div>
     </div>
   </div>
   <!--Intro and service-->
@@ -66,7 +64,8 @@
     <div class="container">
       <div class="row">
         <div class="col s12">
-          <h2 class="center header text_h2" <span class="span_h2">Features</span></h2>
+          <h2 class="center header text_h2"> <span class="span_h2">Replace your morning stand-ups</span></h2>
+          <h5 class="center">Team transparency is crucial to employee happiness and using slashon, you can save time, increase productivity and motivate your team.</h5>
         </div>
         <div class="col s12 m4 l4">
           <div class="center promo promo-example">
